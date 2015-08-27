@@ -1,4 +1,5 @@
 <?php
+//Landing page asking for credentials
  include_once 'helpers.php';
  
  headers("Chit passing system ");

@@ -1,4 +1,7 @@
 <?php
+//Helper methods to be used throughout the app
+
+//Prints the header portion of the page
 function headers($title){
  echo "<!DOCTYPE html>";
  echo "<html>";
@@ -10,11 +13,14 @@ function headers($title){
 }
 
 
+//Prints the footer part of the HTML page
 function footers(){
  echo "</body>";
  echo "</html>";
 }
 
+
+//Establishes connection to the database
 function connect($servername="localhost", $dbname="mun",$username="root",$password="")
 {
 
@@ -29,6 +35,7 @@ function connect($servername="localhost", $dbname="mun",$username="root",$passwo
  }
 }
 
+//Displays the list of countries of that particular council
 function printCountryList($council,$country)
 {
 	$conn=connect();
