@@ -19,9 +19,16 @@ frm varchar(50),
 recipient varchar(50),
 message text,
 sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+eb BOOLEAN,
 FOREIGN KEY (frm) REFERENCES disec_users(username),
 FOREIGN KEY (recipient) REFERENCES disec_users(username),
 PRIMARY KEY (id)
+);
+
+create table eb_cred(
+council varchar(20),
+password varchar(50),
+PRIMARY KEY (council)
 );
 
 create index msg_index on disec_msg (frm,recipient);

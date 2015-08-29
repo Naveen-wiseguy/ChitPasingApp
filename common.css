@@ -3,10 +3,11 @@ html,body{
 }
 
 #messages{
-	border: black solid 2px;
+	border: #878787 solid 2px;
 	width: 90%;
 	height: 60%;
 	overflow-x:auto;
+	overflow-y: auto;
 	margin:auto;
 }
 
@@ -24,7 +25,7 @@ html,body{
 
 #send{
 margin:auto;
-height:20%;
+height:15%;
 width:50%;
 position: fixed;
 bottom: 0;

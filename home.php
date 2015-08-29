@@ -16,8 +16,10 @@ headers("Welcome-chit passing");
 <?php
 
 echo "Welcome delegate of ".$_SESSION["country"] ."<br/>";
-echo "Chits in council :" . $_SESSION["council"];
+echo "Chits in council :" . $_SESSION["council"]."<br/>";
 ?>
+<a href="sent.php" target="_blank">View sent chits</a> <br/>
+Received messages: <br/>
 <div id="messages" >
 
 </div>
@@ -26,6 +28,7 @@ echo "Chits in council :" . $_SESSION["council"];
 To : <select name="dest" id="dest">
 	<?php printCountryList($_SESSION["council"],$_SESSION["country"]); ?>
 </select>
+<input type="checkbox" id="EB" value="EB"/> Via EB
 <br/>
 <textarea name="message" id="text"></textarea><button type="submit" onclick="process()" >Send</button>
 
@@ -56,8 +59,12 @@ function process()
 			document.getElementById("text").value="";
 		else if(req.readyState==4)
 			alert(req.responseText);
+		//else
+			//alert(req.responseText);
 	};
 	var params="dest="+encodeURI(document.getElementById("dest").value)+"&message="+encodeURI(document.getElementById("text").value);
+	if(document.getElementById("EB").checked)
+		params+="&EB=true";
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	req.send(params);
 }
