@@ -1,0 +1,24 @@
+Instructions to run the chit passing app
+Prrequisites:
+Apache,PHP,MySql installed (I have assumed no password
+In case of password, go to helpers.php and type in your password at line 24, assigning to $password)
+
+1) Copy the entire code base to the Apache www directory under a folder called chits
+2) Create the database called mun in MySql
+3) Run the creation statements given in creation.sql ( do not run file, as it has certain comments also. Copy paste statements)
+4) Populate the table using the statements given in seed.sql 
+5) Start the server
+URLs:
+localhost/chits/index.php: Landing page . Authenticates the user.
+localhost/chits/home.php: Home page of a logged in user
+localhost/chits/eb/index.php: Login page of EB
+localhost/chits/eb/home.php : Home page of EB
+localhost/chits/admin/index.php : Login page of admin ie for people to add users on the day. Authentication has been hard coded in auth.php
+localhost/chits/admin/home.php : Home page of admin. Allows the admin to add users. (not extended for multiple councils.)
+
+TO DO:
+1) Adding reply button
+2) Adding the GSL extension
+3) Changing the password generation for users, taking the MUN ID into account. Currently using DOB, which isnt available.
+4) Changing all pages to accomodate all the councils
+

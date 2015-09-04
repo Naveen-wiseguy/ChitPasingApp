@@ -35,3 +35,53 @@ bottom: 0;
 	font-size: 0.8em;
 	color: #828282;
 }
+
+#toeb{
+	border: #878787 solid 2px;
+	width: 40%;
+	height: 60%;
+	overflow-x:auto;
+	overflow-y: auto;
+	margin:auto;
+	float:left;
+}
+
+#toeb .country{
+	text-decoration:underline;
+	font-weight:bold;
+	font-size:1.3em;
+}
+
+#toeb .content{
+	color: #919191;
+	font-size:1em;
+
+}
+
+#viaeb{
+	border: #878787 solid 2px;
+	width: 40%;
+	height: 60%;
+	overflow-x:auto;
+	overflow-y: auto;
+	margin:auto;
+	float:right;
+}
+
+#viaeb .country{
+	text-decoration:underline;
+	font-weight:bold;
+	font-size:1.3em;
+}
+
+#viaeb .content{
+	color: #919191;
+	font-size:1em;
+
+}
+.title{
+	background-color: #919191;
+	float: top;
+	width: 100%;
+	margin: auto;
+}
