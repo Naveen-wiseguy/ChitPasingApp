@@ -5,7 +5,7 @@ $conn=connect();
 session_start();
 if(!$_SESSION["eb"])
 {
-	header("Location: denied.php");
+	header("Location: /chits/denied.php");
 	exit();
 }
 try{

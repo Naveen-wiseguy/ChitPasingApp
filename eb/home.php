@@ -11,8 +11,9 @@ if(!$_SESSION["eb"])
 headers("Welcome-chit passing EB");
 ?>
 <h1>Welcome EB</h1>
+<a href="logout.php">Logout</a><br/>
+<a href="sent.php" target="_blank">View sent chits</a><br/>
 <?php 
-echo "Council :".$_SESSION["council"];
 echo "Chits in council :" . $_SESSION["council"]."<br/>";
 ?>
 
@@ -63,8 +64,6 @@ function process()
 		if(req.readyState==4 && req.status==200)
 			document.getElementById("text").value="";
 		else if(req.readyState==4)
-			alert(req.responseText);
-		else
 			alert(req.responseText);
 	};
 	var params="dest="+encodeURI(document.getElementById("dest").value)+"&message="+encodeURI(document.getElementById("text").value);

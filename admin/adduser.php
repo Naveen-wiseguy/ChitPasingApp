@@ -5,15 +5,15 @@ session_start();
 $conn=connect();
 if(!$_SESSION["admin"])
 {
-	header("HTTP/1.1 403 Forbidden");
+	header("Location: /chits/denied.php");
 	exit();
 }
 $council = $_POST["council"];
 $name= $_POST["name"];
 $country= $_POST["country"];
-$dt=new DateTime($_POST["dob"]);
-$username=$name.$dt->format("dm");
-$password=$dt->format("dmY");
+$munid=$_POST["munid"];
+$username=$munid;
+$password=strrev($name);
 try{
 	$stmt=$conn->prepare("insert into ".$council."_countries values(:country)");
 	$stmt->bindParam(':country',$country);
@@ -27,7 +27,7 @@ try{
 }
 catch(PDOException $e)
 {
-	echo $e->getMessage();
+	echo "Duplicate entry. Kindly recheck !";
 }
 
 ?>

@@ -12,12 +12,13 @@ headers("Welcome-chit passing");
 ?>
 
 <h1>Welcome to the Chit passing system home ! </h1>
-
+<a href="logout.php">Logout</a><br/>
 <?php
 
 echo "Welcome delegate of ".$_SESSION["country"] ."<br/>";
 echo "Chits in council :" . $_SESSION["council"]."<br/>";
 ?>
+<a href="gsl.php" target="_blank">View GSL </a> <br/>
 <a href="sent.php" target="_blank">View sent chits</a> <br/>
 Received messages: <br/>
 <div id="messages" >

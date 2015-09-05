@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	$conn=connect();
 	if($conn==null)
 	{
-		header("Location: denied.php");
+		header("Location: /chits/denied.php");
 		exit();
 	}
 	try{

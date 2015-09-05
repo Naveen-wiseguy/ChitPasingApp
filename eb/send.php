@@ -5,7 +5,7 @@ session_start();
 $conn=connect();
 if(!$_SESSION["eb"])
 {
-	header("HTTP/1.1 403 Forbidden");
+	header("Location: /chits/denied.php");
 	exit();
 }
 $council=$_SESSION["council"];

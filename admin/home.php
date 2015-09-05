@@ -12,7 +12,7 @@ headers("Welcome-chit passing Admin");
 ?>
 <h1>Welcome admin</h1>
 
-
+<a href="logout.php">Logout</a><br/>
 <div id="send">
 Select council <br/>
 <select name="council" id="council">
@@ -21,7 +21,7 @@ Select council <br/>
 </select><br/>
 First Name: <input type="text" id="name" /> <br/>
 Country: <input type="text" id="country" /><br/>
-Date of Birth: <input type="date" id="dob" /><br/>
+MUN ID: <input type="text" id="munid" /><br/>
 <button type="submit" onclick="process()" >Add</button>
 </div>
 
@@ -58,14 +58,14 @@ function process()
 		if(req.readyState==4 && req.status==200){
 			document.getElementById("name").value="";
 			document.getElementById("country").value="";
-			document.getElementById("dob").value="";
+			document.getElementById("munid").value="";
 			alert(req.responseText);
 			getUsers();
 		}
 		else if(req.readyState==4)
 			alert(req.responseText);
 	};
-	var params="name="+encodeURI(document.getElementById("name").value)+"&country="+encodeURI(document.getElementById("country").value)+"&dob="+encodeURI(document.getElementById("dob").value)+"&council="+encodeURI(document.getElementById("council").value);
+	var params="name="+encodeURI(document.getElementById("name").value)+"&country="+encodeURI(document.getElementById("country").value)+"&munid="+encodeURI(document.getElementById("munid").value)+"&council="+encodeURI(document.getElementById("council").value);
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	req.send(params);
 }

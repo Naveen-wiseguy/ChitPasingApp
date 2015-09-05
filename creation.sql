@@ -25,6 +25,13 @@ FOREIGN KEY (recipient) REFERENCES disec_users(username),
 PRIMARY KEY (id)
 );
 
+create table disec_gsl(
+id int AUTO_INCREMENT,
+country varchar(50) UNIQUE,
+PRIMARY KEY(id),
+FOREIGN KEY (country) REFERENCES disec_countries(country)
+);
+
 create table eb_cred(
 council varchar(20),
 password varchar(50),
