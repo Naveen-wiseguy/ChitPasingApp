@@ -37,6 +37,8 @@ To : <select name="dest" id="dest">
 
 
 <script type="text/javascript">
+var isreply=false;
+var chitno=0;
 setInterval(function(){
 	var req=new XMLHttpRequest();
 	req.open("GET","retrieved.php",true);
@@ -56,18 +58,46 @@ function process()
 	req.open("POST","send.php",true);
 	req.onreadystatechange=function()
 	{
-		if(req.readyState==4 && req.status==200)
+		if(req.readyState==4 && req.status==200){
 			document.getElementById("text").value="";
+			isreply=false;
+			chitno=0;
+			document.getElementById("EB").disabled=false;
+			document.getElementById("dest").disabled=false;
+		}
 		else if(req.readyState==4)
 			alert(req.responseText);
 		//else
 			//alert(req.responseText);
 	};
-	var params="dest="+encodeURI(document.getElementById("dest").value)+"&message="+encodeURI(document.getElementById("text").value);
+	var msg;
+	if(isreply)
+	{
+		msg="In reply to chit no "+chitno+"\n";
+	}
+	else
+		msg="";
+	msg+=document.getElementById("text").value;
+	var params="dest="+encodeURI(document.getElementById("dest").value)+"&message="+msg;
 	if(document.getElementById("EB").checked)
 		params+="&EB=true";
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	req.send(params);
+}
+
+//Method to be called in order to reply to a chit
+function reply(chit,from,eb)
+{
+	isreply=true;
+	document.getElementById("dest").value=from;
+	chitno=chit;
+	
+	document.getElementById("dest").disabled=true;
+	if(eb)
+	{
+		document.getElementById("EB").checked=true;
+		document.getElementById("EB").disabled=true;
+	}
 }
 </script>
 <?php

@@ -5,7 +5,7 @@ html,body{
 #messages{
 	border: #878787 solid 2px;
 	width: 90%;
-	height: 60%;
+	height: 50%;
 	overflow-x:auto;
 	overflow-y: auto;
 	margin:auto;
@@ -40,7 +40,7 @@ bottom: 0;
 #toeb{
 	border: #878787 solid 2px;
 	width: 40%;
-	height: 60%;
+	height: 50%;
 	overflow-x:auto;
 	overflow-y: auto;
 	margin:auto;
@@ -63,7 +63,7 @@ bottom: 0;
 #viaeb{
 	border: #878787 solid 2px;
 	width: 40%;
-	height: 60%;
+	height: 50%;
 	overflow-x:auto;
 	overflow-y: auto;
 	margin:auto;
@@ -98,4 +98,5 @@ bottom: 0;
 	width: 100%;
 	margin: auto;
 	padding-left:0;
+	color:#FFFFFF;
 }

@@ -19,6 +19,8 @@ while($row=$stmt->fetch(PDO::FETCH_ASSOC,PDO::FETCH_ORI_NEXT))
 	echo "<span class=\"content\">".$row["message"]."</span></div>";
 	if($row["eb"]==1)
 		echo "Sent via eb";
+	$click="reply(".$row["id"].",'".$row["country"]."',".$row["eb"].")";
+	echo "<br/><button onclick=\"".$click."\">Reply</button>";
 	echo "<hr/>";
 }
 }

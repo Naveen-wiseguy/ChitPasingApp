@@ -18,6 +18,8 @@ while($row=$stmt->fetch(PDO::FETCH_ASSOC,PDO::FETCH_ORI_NEXT))
 	$dt=new DateTime($row["sent_at"]);
 	echo "<div class='msg'><span class=\"country\">".$row["country"]."</span> <span class=\"time\">".$dt->format("M j g:i A")."</span> Chit number :".$row["id"]."<br/>";
 	echo "<span class=\"content\">".$row["message"]."</span></div>";
+	$click="reply(".$row["id"].",'".$row["country"]."')";
+	echo "<br/><button onclick=\"".$click."\">Reply</button>";
 	echo "<hr/>";
 }
 }
