@@ -4,7 +4,7 @@ $conn=connect();
 session_start();
 if(!$_SESSION["loggedin"])
 {
-	header("Location: /chits/denied.php");
+	header("Location: denied.php");
 	exit();
 }
 try{

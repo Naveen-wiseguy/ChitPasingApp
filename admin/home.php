@@ -5,7 +5,7 @@ include_once '../helpers.php';
 session_start();
 if(!$_SESSION["admin"])
 {
-	header("Location: /chits/denied.php");
+	header("Location: ../denied.php");
 	exit();
 }
 headers("Welcome-chit passing Admin");
@@ -18,6 +18,9 @@ Select council <br/>
 <select name="council" id="council">
 <option value="disec">UNGA-DISEC</option>
 <option value="sc">Security Council</option>
+<option value="hrc">HRC</option>
+<option value="eu">European Union</option>
+<option value="iaea">IAEA</option>
 </select><br/>
 First Name: <input type="text" id="name" /> <br/>
 Country: <input type="text" id="country" /><br/>

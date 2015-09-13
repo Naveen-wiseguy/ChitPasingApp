@@ -15,6 +15,9 @@ Password:<input type="password" name="pwd" /><br/>
 Council :<select name="council">
 <option value="disec">UNGA-DISEC</option>
 <option value="sc">Security Council</option>
+<option value="hrc">HRC</option>
+<option value="eu">European Union</option>
+<option value="iaea">IAEA</option>
 </select>
 <input type="submit" />
 </form>

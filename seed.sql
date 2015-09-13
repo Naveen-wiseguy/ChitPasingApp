@@ -13,3 +13,5 @@ insert into disec_users(username,password,country) values('user2','password','In
 insert into disec_users(username,password,country) values('user3','pass','China');
 insert into disec_users(username,password,country) values('user4','tester','UK');
 insert into disec_users(username,password,country) values('eb','','EB');
+
+insert into ip_cred values('disec','xyz');

@@ -5,7 +5,7 @@ session_start();
 $conn=connect();
 if(!$_SESSION["loggedin"])
 {
-	header("Location: /chits/denied.php");
+	header("Location: denied.php");
 	exit();
 }
 $council = $_SESSION["council"];

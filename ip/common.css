@@ -1,0 +1,102 @@
+html,body{
+	height:100%;
+}
+
+#messages{
+	border: #878787 solid 2px;
+	width: 90%;
+	height: 50%;
+	overflow-x:auto;
+	overflow-y: auto;
+	margin:auto;
+	padding-left: 1%;
+}
+
+#messages .country{
+	text-decoration:underline;
+	font-weight:bold;
+	font-size:1.3em;
+}
+
+#messages .content{
+	color: #919191;
+	font-size:1em;
+
+}
+
+#send{
+margin:auto;
+height:20%;
+width:50%;
+position: fixed;
+bottom: 0;
+}
+
+#messages .time{
+	font-size: 0.8em;
+	color: #828282;
+}
+
+#toeb{
+	border: #878787 solid 2px;
+	width: 40%;
+	height: 50%;
+	overflow-x:auto;
+	overflow-y: auto;
+	margin:auto;
+	float:left;
+	padding-left: 1%;
+}
+
+#toeb .country{
+	text-decoration:underline;
+	font-weight:bold;
+	font-size:1.3em;
+}
+
+#toeb .content{
+	color: #919191;
+	font-size:1em;
+
+}
+
+#viaeb{
+	border: #878787 solid 2px;
+	width: 40%;
+	height: 50%;
+	overflow-x:auto;
+	overflow-y: auto;
+	margin:auto;
+	float:right;
+	padding-left: 1%;
+}
+
+#viaeb .country{
+	text-decoration:underline;
+	font-weight:bold;
+	font-size:1.3em;
+}
+
+#viaeb .content{
+	color: #919191;
+	font-size:1em;
+
+}
+
+#toeb .time{
+	font-size: 0.8em;
+	color: #828282;
+}
+
+#viaeb .time{
+	font-size: 0.8em;
+	color: #828282;
+}
+.title{
+	background-color: #919191;
+	float: top;
+	width: 100%;
+	margin: auto;
+	padding-left:0;
+	color:#FFFFFF;
+}

@@ -13,6 +13,7 @@ headers("Welcome-chit passing EB");
 <h1>Welcome EB</h1>
 <a href="logout.php">Logout</a><br/>
 <a href="sent.php" target="_blank">View sent chits</a><br/>
+<a href="gsl.php" target="_blank">GSL</a>
 <?php 
 echo "Chits in council :" . $_SESSION["council"]."<br/>";
 ?>
@@ -24,7 +25,8 @@ echo "Chits in council :" . $_SESSION["council"]."<br/>";
 <div id="viaeb">
 
 </div>
-
+<a href="download_to.php">Download received chits</a>
+<a href="download_via.php">Download chits via EB</a>
 <div id="send">
 To : <select name="dest" id="dest">
 	<?php printCountryList($_SESSION["council"],"EB"); ?>
@@ -37,7 +39,10 @@ To : <select name="dest" id="dest">
 var isreply=false;
 var chitno=0;
 //Periodically refreshes the messages
-setInterval(function(){
+setInterval(getMsgs,5000
+);
+
+function getMsgs(){
 	var req=new XMLHttpRequest();
 	req.open("GET","to_eb.php",true);
 	req.onreadystatechange=function()
@@ -54,9 +59,7 @@ setInterval(function(){
 			document.getElementById("viaeb").innerHTML=req2.responseText;
 	};
 	req2.send();
-},5000
-);
-
+}
 //Makes the AJAX calls
 function process()
 {
@@ -94,6 +97,8 @@ function reply(chit,from)
 	
 	document.getElementById("dest").disabled=true;
 }
+
+getMsgs();
 </script>
 <?php
 footers();

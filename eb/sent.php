@@ -6,7 +6,7 @@ $conn=connect();
 session_start();
 if(!$_SESSION["eb"])
 {
-	header("Location: /chits/denied.php");
+	header("Location: ../denied.php");
 	exit();
 }
 
@@ -17,7 +17,6 @@ echo "<div id=\"messages\" >";
 
 try{
 $stmt=$conn->prepare("select u.country,m.message,m.sent_at from ".$_SESSION["council"]."_msg m, ".$_SESSION["council"]."_users u where m.recipient= u.username and m.frm='eb' order by sent_at desc ",array(PDO::ATTR_CURSOR=>PDO::CURSOR_SCROLL));
-$stmt->bindParam(':usr',$_SESSION["user"]);
 $stmt->execute();
 while($row=$stmt->fetch(PDO::FETCH_ASSOC,PDO::FETCH_ORI_NEXT))
 {

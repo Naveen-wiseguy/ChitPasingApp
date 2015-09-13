@@ -10,7 +10,7 @@ if($_POST["uname"]=="admin" && $_POST["pwd"]=="ssnMUN")
 	exit();
 }
 else{
-	header("Location: /chits/denied.php");
+	header("Location: ../denied.php");
 	exit();
 }
 ?>

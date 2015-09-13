@@ -5,7 +5,7 @@ session_start();
 $conn=connect();
 if(!$_SESSION["admin"])
 {
-	header("Location: /chits/denied.php");
+	header("Location: ../denied.php");
 	exit();
 }
 $council = $_POST["council"];
@@ -20,8 +20,8 @@ try{
 	$stmt->execute();
 	$stmt=$conn->prepare("insert into ".$council."_users(username,password,country) values(:username,:password,:country)");
 	$stmt->bindParam(':country',$country);
-	$stmt->bindParam(':username',$username);
-	$stmt->bindParam(':password',$password);
+	$stmt->bindParam(':username',$country);
+	$stmt->bindParam(':password',$munid);
 	$stmt->execute();
 	echo "OK";
 }

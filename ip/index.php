@@ -1,9 +1,9 @@
 <?php
-//Landing page for eb asking for credentials
+//Landing page for IP asking for credentials
  include_once '../helpers.php';
  
  headers("Chit passing system ");
- echo "<h1>Welcome EB ! Login :</h1>";
+ echo "<h1>Welcome IP ! Login :</h1>";
  $conn=connect();
 //if($conn == null)
 //	echo "Unable to connect";

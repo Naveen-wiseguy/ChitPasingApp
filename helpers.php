@@ -7,7 +7,7 @@ function headers($title){
  echo "<html>";
  echo "<head>";
  echo "<title>$title</title>";
- echo "<link rel=\"stylesheet\" href=\"http://localhost/chits/common.css\"></link>";
+ echo "<link rel=\"stylesheet\" href=\"common.css\"></link>";
  echo "</head>";
  echo "<body>";
 }

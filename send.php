@@ -5,7 +5,7 @@ session_start();
 $conn=connect();
 if(!$_SESSION["loggedin"])
 {
-	header("HTTP/1.1 403 Forbidden");
+	header("Location: denied.php");
 	exit();
 }
 $council=$_SESSION["council"];

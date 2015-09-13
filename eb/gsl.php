@@ -1,11 +1,11 @@
 <?php
-//delegate home page
+//EB GSL page
 include_once '../helpers.php';
 
 session_start();
 if(!$_SESSION["eb"])
 {
-	header("Location: /chits/denied.php");
+	header("Location: ../denied.php");
 	exit();
 }
 headers("Welcome-chit passing");
@@ -36,7 +36,7 @@ function getGSL(){
 		
 	};
 	req.send();
-	//document.getElementById("status").innerHTML="";
+	document.getElementById("status").innerHTML="";
 }
 
 function removeFromGSL(id)

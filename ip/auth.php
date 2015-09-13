@@ -1,27 +1,23 @@
 <?php
-//Authentication of delegates
-include_once "helpers.php";
+//Authentication of IP
+include_once "../helpers.php";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-	$table=$_POST["council"];
-	$table=$table."_users";
-	$name=$_POST["uname"];
+	$council=$_POST["council"];
 	$pwd=$_POST["pwd"];
 	$conn=connect();
 	if($conn==null)
 	{
-		header("Location: error.php");
+		header("Location: ../denied.php");
 		exit();
 	}
 	try{
-	$stmt=$conn->prepare("SELECT * from ".$table." where username=:usr");
-	$stmt->bindParam(':usr',$name);
+	$stmt=$conn->prepare("SELECT * from ip_cred where council=:council");
+	$stmt->bindParam(':council',$council);
 	$stmt->execute();
 	$result=$stmt->fetch(PDO::FETCH_ASSOC);
 	if($result["password"]==$pwd){
 		session_start();
-		$_SESSION["loggedin"]=true;
-		$_SESSION["user"]=$name;
-		$_SESSION["country"]=$result["country"];
+		$_SESSION["ip"]=true;
 		$_SESSION["council"]=$_POST["council"];
 		header("Location: home.php");
 		exit();
